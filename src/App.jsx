@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
+import Navbar from "./assets/components/Navbar/Navbar";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -17,7 +18,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Lista de Películas</h1>
+      <Navbar /> 
+      
       <div className="movies-container">
         
         {movies.map((movie) => (
