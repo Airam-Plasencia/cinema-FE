@@ -1,11 +1,11 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-  .App {
+.App {
     text-align: center;
+    min-height: 100vh;
+    background-image: url('./assets/img/neon-gradient.jpg');
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
+    
   }
   
   .movies-container {
@@ -43,5 +43,5 @@
   
   p {
     font-size: 14px;
-    color: #555;
+    color: #f8f5f5;
   }

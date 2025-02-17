@@ -15,6 +15,7 @@ function App() {
         console.error('Error fetching movies:', error);
       });
   }, []); 
+  
 
   return (
     <div className="App">
