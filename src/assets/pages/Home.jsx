@@ -5,7 +5,7 @@ const Home = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5005/movies')
+        axios.get(`${import.meta.env.VITE_BACK_URL}/movies`)
             .then((response) => {
                 setMovies(response.data);
             })
