@@ -1,18 +1,21 @@
-
 import React from "react";
-import "../Navbar/Navbar.css"; 
+import { Link } from "react-router-dom"; // Importa Link para navegación
+import "../Navbar/Navbar.css";
 
 const Navbar = () => {
   return (
     <nav className="nav-class">
       <div className="logo">
-        <img src="./assets/img/galaxy.png" alt="Cinema Logo" className="logo-img" />
+        
+        <Link to="/">
+          <img src="./src/assets/img/Cinema-logo.png" alt="galaxy logo" className="logo-img" />
+        </Link>
       </div>
       <ul className="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/">About</a></li>
-        <li><a href="/movies">Add Movies</a></li>
-        <li><a href="/contact">Curiosity</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/movies">Add Movies</Link></li>
+        <li><Link to="/contact">Curiosity</Link></li>
       </ul>
     </nav>
   );

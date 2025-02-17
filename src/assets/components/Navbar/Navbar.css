@@ -13,7 +13,7 @@
   }
   
   .logo-img {
-    height: 50px; 
+    height: 100px; 
     width: auto;
   }
   
@@ -36,7 +36,7 @@
   }
   
   .nav-links a:hover {
-    color: #1148d2;
+    color: #39c3f1;
   }
   
   
@@ -58,17 +58,17 @@
   }
   
   .nav-links li:nth-child(1)::before {
-    background-color: #e74c3c; 
+    background-color: #00ddff; 
   }
   
   .nav-links li:nth-child(2)::before {
-    background-color: #8e44ad; 
+    background-color: #ffff00; 
   }
   
   .nav-links li:nth-child(3)::before {
-    background-color: #3498db; 
+    background-color: #eb7cac; 
   }
   
   .nav-links li:nth-child(4)::before {
-    background-color: #2ecc71; 
+    background-color: #e10dd0; 
   }
