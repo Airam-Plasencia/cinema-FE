@@ -27,22 +27,50 @@ const AddMovies = () => {
     if (file) {
       setMovieData((prevData) => ({
         ...prevData,
-        posterUrl: URL.createObjectURL(file) 
+        posterUrl: URL.createObjectURL(file) // Aseguramos que se vea el póster en el frontend
       }));
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Nueva película agregada:', movieData);
-    
+
+    // Aquí va la solicitud POST al backend (json-server)
+    fetch('http://localhost:5005/movies', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(movieData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Película agregada:', data);
+        // Si la película se agrega correctamente, puedes limpiar el formulario
+        setMovieData({
+          title: '',
+          year: '',
+          duration: '',
+          director: '',
+          screenplay: '',
+          cast: '',
+          music: '',
+          genre: '',
+          synopsis: '',
+          posterUrl: ''
+        });
+      })
+      .catch(error => {
+        console.error('Error al agregar la película:', error);
+      });
   };
 
   return (
     <div style={{ padding: '20px' }}>
       <h2>Agregar Película a Nuovo Cinema Galaxy</h2>
-      
+
       <form onSubmit={handleSubmit}>
+
         <div>
           <label>Título: </label>
           <input
@@ -52,9 +80,8 @@ const AddMovies = () => {
             onChange={handleChange}
             required
             style={{ padding: '8px', width: '300px' }}
-            />
+          />
         </div>
-        
         <div>
           <label>Año: </label>
           <input
@@ -63,22 +90,22 @@ const AddMovies = () => {
             value={movieData.year}
             onChange={handleChange}
             required
-            style={{ padding: '3px',  width: '100px' }}
-            />
+            style={{ padding: '8px', width: '100px' }}
+          />
         </div>
-        
+
         <div>
           <label>Duración: </label>
           <input
-            type="text"
+            type="number"
             name="duration"
             value={movieData.duration}
             onChange={handleChange}
             required
-            style={{ padding: '3px',  width: '100px' }}
-            />
+            style={{ padding: '8px', width: '100px' }}
+          />
         </div>
-        
+
         <div>
           <label>Director: </label>
           <input
@@ -87,34 +114,34 @@ const AddMovies = () => {
             value={movieData.director}
             onChange={handleChange}
             required
-            style={{ padding: '3px',  width: '200px' }}
-            />
+            style={{ padding: '8px', width: '150px' }}
+          />
         </div>
-        
+
         <div>
-          <label>Guionista: </label>
+          <label>Guion: </label>
           <input
             type="text"
             name="screenplay"
             value={movieData.screenplay}
             onChange={handleChange}
             required
-            style={{ padding: '3px',  width: '200px' }}
-            />
+            style={{ padding: '8px', width: '150px' }}
+          />
         </div>
-        
+
         <div>
-          <label>Elenco: </label>
+          <label>Reparto: </label>
           <input
             type="text"
             name="cast"
             value={movieData.cast}
             onChange={handleChange}
             required
-            style={{ padding: '3px',  width: '200px' }}
-            />
+            style={{ padding: '8px', width: '200px' }}
+          />
         </div>
-        
+
         <div>
           <label>Música: </label>
           <input
@@ -123,10 +150,10 @@ const AddMovies = () => {
             value={movieData.music}
             onChange={handleChange}
             required
-            style={{ padding: '3px',  width: '200px' }}
-            />
+            style={{ padding: '8px', width: '150px' }}
+          />
         </div>
-        
+
         <div>
           <label>Género: </label>
           <input
@@ -135,10 +162,10 @@ const AddMovies = () => {
             value={movieData.genre}
             onChange={handleChange}
             required
-            style={{ padding: '3px',  width: '200px' }}
-            />
+            style={{ padding: '8px', width: '150px' }}
+          />
         </div>
-        
+
         <div>
           <label>Sinopsis: </label>
           <textarea
@@ -146,11 +173,11 @@ const AddMovies = () => {
             value={movieData.synopsis}
             onChange={handleChange}
             required
-            style={{ padding: '5px', width: '300px' }}
-            />
+            style={{ padding: '8px', width: '250px', height: '100px' }}
+          />
         </div>
 
-        
+
         <div>
           <label>Seleccionar Póster: </label>
           <input
@@ -161,7 +188,6 @@ const AddMovies = () => {
           />
         </div>
 
-        
         {movieData.posterUrl && (
           <div style={{ marginTop: '10px' }}>
             <h4>Vista previa del póster:</h4>
@@ -169,12 +195,11 @@ const AddMovies = () => {
           </div>
         )}
 
-        
-        <button 
+        <button
           type="submit"
           style={{
             marginTop: '20px',
-            backgroundColor: '#710866',  
+            backgroundColor: '#710866',
             color: 'white',
             padding: '10px 20px',
             border: 'none',
