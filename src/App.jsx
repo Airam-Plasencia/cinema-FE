@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from "./assets/components/Navbar/Navbar";
+import Footer from "./assets/components/Footer/Footer";
 import { Routes, Route } from 'react-router-dom';
 
 import Home from './assets/pages/Home';
@@ -20,6 +21,8 @@ function App() {
         <Route path="/movies" element={<AddMovies />} />
         <Route path="/contact" element={<Curiosity />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }

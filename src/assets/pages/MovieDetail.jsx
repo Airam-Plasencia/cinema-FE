@@ -42,7 +42,8 @@ const MovieDetail = () => {
           <p><strong>Año:</strong> {movie.year}</p>
           <p><strong>Duración:</strong> {movie.duration}</p>
           <p><strong>Director:</strong> {movie.director}</p>
-          <p><strong>Guion:</strong> {movie.screenplay}</p>
+          <p><strong>Guión:</strong> {movie.screenplay}</p>
+          <p><strong>Actores:</strong> {movie.cast.join(', ')}</p>
           <p><strong>Género:</strong> {movie.genre.join(', ')}</p>
           <p><strong>Sinopsis:</strong> {movie.synopsis}</p>
         </div>
