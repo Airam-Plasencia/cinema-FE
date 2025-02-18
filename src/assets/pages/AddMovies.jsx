@@ -40,7 +40,7 @@ const AddMovies = () => {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h2>Agregar Película a Cinema Paradise</h2>
+      <h2>Agregar Película a Nuovo Cinema Galaxy</h2>
       
       <form onSubmit={handleSubmit}>
         <div>

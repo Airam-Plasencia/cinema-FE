@@ -65,9 +65,9 @@
   }
   
   .nav-links li:nth-child(3)::before {
-    background-color: #eb7cac; 
+    background-color: #f86ed8; 
   }
   
   .nav-links li:nth-child(4)::before {
-    background-color: #e10dd0; 
+    background-color: #ffdcf8; 
   }
