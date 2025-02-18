@@ -24,7 +24,7 @@ const MovieDetail = () => {
   return (
     <div className="movie-detail-container">
       <div className="movie-image-above">
-        {/* Usa la URL de la imagen de fondo específica para cada película */}
+       
         <img 
           src={movie.backgroundImageUrl} 
           alt={movie.title} 

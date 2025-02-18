@@ -4,9 +4,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    color: white;
+    color: white; 
   }
-  
   .nav-class .logo {
     display: flex;
     align-items: center;
