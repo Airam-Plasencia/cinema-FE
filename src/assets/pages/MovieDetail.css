@@ -1,0 +1,45 @@
+.movie-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .movie-detail-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .movie-poster-detail {
+    width: 250px;
+    height: 375px;
+    object-fit: cover;
+  }
+  
+  .movie-detail-info {
+    max-width: 600px;
+  }
+  
+  .image-above-movie {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; 
+    filter: brightness(50%); 
+  }
+  
+  .image-above-movie {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+  }

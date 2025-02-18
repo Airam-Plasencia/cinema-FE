@@ -6,6 +6,7 @@ import Home from './assets/pages/Home';
 import About from './assets/pages/About';
 import AddMovies from './assets/pages/AddMovies';
 import Curiosity from './assets/pages/Curiosity';
+import MovieDetail from './assets/pages/MovieDetail';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/movies" element={<AddMovies />} />
         <Route path="/contact" element={<Curiosity />} />

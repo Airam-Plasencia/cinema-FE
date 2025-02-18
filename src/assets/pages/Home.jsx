@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';  
 import axios from 'axios';
 
 const Home = () => {
@@ -20,16 +21,16 @@ const Home = () => {
                 <div className="movies-container">
                     {movies.map((movie) => (
                         <div key={movie.id} className="movie-card">
-                            <img src={movie.posterUrl} alt={movie.title} className="movie-poster" />
-                            <h2>{movie.title}</h2>
-                            <p>{movie.year}</p>
+                            <Link to={`/movie/${movie.id}`}> 
+                                <img src={movie.posterUrl} alt={movie.title} className="movie-poster" />
+                                <h2>{movie.title}</h2>
+                                <p>{movie.year}</p>
+                            </Link>
                         </div>
-
                     ))}
                 </div>
             </div>
         </div>
     );
 };
-
 export default Home;

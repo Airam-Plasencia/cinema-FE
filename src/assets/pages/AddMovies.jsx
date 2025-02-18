@@ -40,7 +40,7 @@ const AddMovies = () => {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Agregar Nueva Película</h1>
+      <h2>Agregar Película a Cinema Paradise</h2>
       
       <form onSubmit={handleSubmit}>
         <div>
@@ -111,7 +111,8 @@ const AddMovies = () => {
             value={movieData.cast}
             onChange={handleChange}
             required
-          />
+            style={{ padding: '3px',  width: '200px' }}
+            />
         </div>
         
         <div>
@@ -122,7 +123,8 @@ const AddMovies = () => {
             value={movieData.music}
             onChange={handleChange}
             required
-          />
+            style={{ padding: '3px',  width: '200px' }}
+            />
         </div>
         
         <div>
@@ -133,7 +135,8 @@ const AddMovies = () => {
             value={movieData.genre}
             onChange={handleChange}
             required
-          />
+            style={{ padding: '3px',  width: '200px' }}
+            />
         </div>
         
         <div>
@@ -143,7 +146,8 @@ const AddMovies = () => {
             value={movieData.synopsis}
             onChange={handleChange}
             required
-          />
+            style={{ padding: '5px', width: '300px' }}
+            />
         </div>
 
         
@@ -170,7 +174,7 @@ const AddMovies = () => {
           type="submit"
           style={{
             marginTop: '20px',
-            backgroundColor: '#2CAF50',  
+            backgroundColor: '#710866',  
             color: 'white',
             padding: '10px 20px',
             border: 'none',
