@@ -46,92 +46,116 @@ const EditMovie = () => {
             <h2>Editar Película</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Título</label>
+                    <label>Título:</label>
                     <input
                         type="text"
                         name="title"
                         value={movie.title}
                         onChange={handleChange}
+                        required
+                        style={{ padding: '8px', width: '300px' }}
                     />
                 </div>
                 <div>
-                    <label>Año</label>
+                    <label>Año:</label>
                     <input
                         type="text"
                         name="year"
                         value={movie.year}
                         onChange={handleChange}
+                        required
+                        style={{ padding: '8px', width: '80px' }}
                     />
                 </div>
                 <div>
-                    <label>Duración</label>
+                    <label>Duración:</label>
                     <input
                         type="text"
                         name="duration"
                         value={movie.duration}
                         onChange={handleChange}
+                        required
+                        style={{ padding: '8px', width: '80px' }}
                     />
                 </div>
                 <div>
-                    <label>Director</label>
+                    <label>Director: </label>
                     <input
                         type="text"
                         name="director"
                         value={movie.director}
                         onChange={handleChange}
+                        required
+                        style={{ padding: '8px', width: '150px' }}
                     />
                 </div>
                 <div>
-                    <label>Guion</label>
+                    <label>Guion: </label>
                     <input
                         type="text"
                         name="screenplay"
                         value={movie.screenplay}
                         onChange={handleChange}
+                        required
+                        style={{ padding: '8px', width: '150px' }}
                     />
                 </div>
                 <div>
-                    <label>Elenco</label>
+                    <label>Elenco: </label>
                     <input
                         type="text"
                         name="cast"
                         value={movie.cast}
                         onChange={handleChange}
+                        required
+                        style={{ padding: '8px', width: '200px' }}
                     />
                 </div>
                 <div>
-                    <label>Música</label>
+                    <label>Música: </label>
                     <input
                         type="text"
                         name="music"
                         value={movie.music}
                         onChange={handleChange}
+                        required
+                        style={{ padding: '8px', width: '150px' }}
                     />
                 </div>
                 <div>
-                    <label>Género</label>
+                    <label>Género: </label>
                     <input
                         type="text"
                         name="genre"
                         value={movie.genre}
                         onChange={handleChange}
+                        required
+                        style={{ padding: '8px', width: '150px' }}
                     />
                 </div>
                 <div>
-                    <label>Sinopsis</label>
+                    <label>Sinopsis: </label>
                     <textarea
                         name="synopsis"
                         value={movie.synopsis}
                         onChange={handleChange}
+                        required
+                        style={{
+                            padding: '8px',
+                            width: '250px',
+                            height: '80px',
+                        }}
                     />
                 </div>
                 <div>
-                    <label>URL Poster</label>
+                    <label>URL Poster: </label>
                     <input
                         type="text"
                         name="posterUrl"
                         value={movie.posterUrl}
                         onChange={handleChange}
+                        required
+                        style={{ padding: '8px', width: '300px', textAlign: 'center' }}
                     />
                 </div>
                 <button

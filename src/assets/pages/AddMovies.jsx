@@ -13,7 +13,7 @@ const AddMovies = () => {
     synopsis: '',
     posterUrl: ''
   });
-  
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,10 +25,10 @@ const AddMovies = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
-    
 
-   
+
+
+
     fetch('http://localhost:5005/movies', {
       method: 'POST',
       headers: {
@@ -159,16 +159,21 @@ const AddMovies = () => {
           />
         </div>
 
-        <div>
-          <label>Sinopsis: </label>
+        <div className="textarea-container">
+          <label htmlFor="synopsis" className="textarea-label">Sinopsis: </label>
           <textarea
             name="synopsis"
             value={movieData.synopsis}
             onChange={handleChange}
             required
-            style={{ padding: '8px', width: '250px', height: '100px' }}
+            style={{
+              padding: '8px',
+              width: '250px',
+              height: '80px',
+            }}
           />
         </div>
+
         <div>
           <label>Póster (URL): </label>
           <input
@@ -177,7 +182,7 @@ const AddMovies = () => {
             value={movieData.posterUrl}
             onChange={handleChange}
             required
-            style={{ padding: '8px', width: '300px' }}
+            style={{ padding: '8px', width: '300px', textAlign: 'center' }}
           />
         </div>
 
