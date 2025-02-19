@@ -5,7 +5,8 @@ import axios from 'axios';
 const Home = () => {
     const [movies, setMovies] = useState([]);
 
-    useEffect(() => {
+    // Obtener las películas del backend
+    const fetchMovies = () => {
         axios.get(`${import.meta.env.VITE_BACK_URL}/movies`)
             .then((response) => {
                 setMovies(response.data);
@@ -13,8 +14,22 @@ const Home = () => {
             .catch((error) => {
                 console.error('Error fetching movies:', error);
             });
-    }, []);
+    };
 
+    const handleDelete = (id) => {
+        axios.delete(`${import.meta.env.VITE_BACK_URL}/movies/${id}`)
+            .then(() => {
+                
+                setMovies((prevMovies) => prevMovies.filter(movie => movie.id !== id));
+            })
+            .catch((error) => {
+                console.error('Error deleting movie:', error);
+            });
+    };
+
+    useEffect(() => {
+        fetchMovies();
+    }, []); 
 
     return (
         <div style={{ minHeight: '100vh' }}>
@@ -27,6 +42,8 @@ const Home = () => {
                                 <h2>{movie.title}</h2>
                                 <p>{movie.year}</p>
                             </Link>
+                            
+                            <button onClick={() => handleDelete(movie.id)}>Eliminar</button>
                         </div>
                     ))}
                 </div>
@@ -34,4 +51,5 @@ const Home = () => {
         </div>
     );
 };
+
 export default Home;

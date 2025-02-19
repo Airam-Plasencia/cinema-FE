@@ -13,6 +13,7 @@ const AddMovies = () => {
     synopsis: '',
     posterUrl: ''
   });
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,20 +23,12 @@ const AddMovies = () => {
     }));
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setMovieData((prevData) => ({
-        ...prevData,
-        posterUrl: URL.createObjectURL(file) // Aseguramos que se vea el póster en el frontend
-      }));
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
+   
+    
 
-    // Aquí va la solicitud POST al backend (json-server)
+   
     fetch('http://localhost:5005/movies', {
       method: 'POST',
       headers: {
@@ -46,7 +39,7 @@ const AddMovies = () => {
       .then(response => response.json())
       .then(data => {
         console.log('Película agregada:', data);
-        // Si la película se agrega correctamente, puedes limpiar el formulario
+        io
         setMovieData({
           title: '',
           year: '',
@@ -176,15 +169,15 @@ const AddMovies = () => {
             style={{ padding: '8px', width: '250px', height: '100px' }}
           />
         </div>
-
-
         <div>
-          <label>Seleccionar Póster: </label>
+          <label>Póster (URL): </label>
           <input
-            type="file"
-            accept="image/jpeg"
-            onChange={handleFileChange}
+            type="url"
+            name="posterUrl"
+            value={movieData.posterUrl}
+            onChange={handleChange}
             required
+            style={{ padding: '8px', width: '300px' }}
           />
         </div>
 
