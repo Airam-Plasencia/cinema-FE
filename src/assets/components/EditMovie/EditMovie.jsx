@@ -64,7 +64,7 @@ const EditMovie = () => {
                         value={movie.year}
                         onChange={handleChange}
                         required
-                        style={{ padding: '8px', width: '80px' }}
+                        style={{ marginTop: '5px', padding: '8px', width: '80px' }}
                     />
                 </div>
                 <div>
@@ -75,7 +75,7 @@ const EditMovie = () => {
                         value={movie.duration}
                         onChange={handleChange}
                         required
-                        style={{ padding: '8px', width: '80px' }}
+                        style={{ marginTop: '5px', padding: '8px', width: '80px' }}
                     />
                 </div>
                 <div>
@@ -86,7 +86,7 @@ const EditMovie = () => {
                         value={movie.director}
                         onChange={handleChange}
                         required
-                        style={{ padding: '8px', width: '150px' }}
+                        style={{ marginTop: '5px', padding: '8px', width: '150px' }}
                     />
                 </div>
                 <div>
@@ -97,7 +97,7 @@ const EditMovie = () => {
                         value={movie.screenplay}
                         onChange={handleChange}
                         required
-                        style={{ padding: '8px', width: '150px' }}
+                        style={{ marginTop: '5px', padding: '8px', width: '150px' }}
                     />
                 </div>
                 <div>
@@ -108,7 +108,7 @@ const EditMovie = () => {
                         value={movie.cast}
                         onChange={handleChange}
                         required
-                        style={{ padding: '8px', width: '200px' }}
+                        style={{ marginTop: '5px', padding: '8px', width: '200px' }}
                     />
                 </div>
                 <div>
@@ -119,7 +119,7 @@ const EditMovie = () => {
                         value={movie.music}
                         onChange={handleChange}
                         required
-                        style={{ padding: '8px', width: '150px' }}
+                        style={{ marginTop: '5px', padding: '8px', width: '150px' }}
                     />
                 </div>
                 <div>
@@ -130,7 +130,7 @@ const EditMovie = () => {
                         value={movie.genre}
                         onChange={handleChange}
                         required
-                        style={{ padding: '8px', width: '150px' }}
+                        style={{ marginTop: '5px', padding: '8px', width: '150px' }}
                     />
                 </div>
                 <div>
@@ -141,6 +141,7 @@ const EditMovie = () => {
                         onChange={handleChange}
                         required
                         style={{
+                            marginTop: '5px',
                             padding: '8px',
                             width: '250px',
                             height: '80px',
@@ -155,20 +156,19 @@ const EditMovie = () => {
                         value={movie.posterUrl}
                         onChange={handleChange}
                         required
-                        style={{ padding: '8px', width: '300px', textAlign: 'center' }}
+                        style={{ marginTop: '5px', padding: '8px', width: '300px', textAlign: 'center' }}
                     />
                 </div>
                 <button
                     type="submit"
                     style={{
-                        fontSize: '12px',
-                        padding: '6px 12px',
+                        marginTop: '5px',
+                        fontSize: '16px',
+                        padding: '10px 20px',
                         marginTop: '20px',
                         cursor: 'pointer',
-                        border: '1px solid #ccc',
                         backgroundColor: '#710866',
                         color: 'white',
-                        borderRadius: '5px',
                         transition: 'background-color 0.3s ease'
                     }}
                 >

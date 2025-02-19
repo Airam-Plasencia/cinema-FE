@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 
 const AddMovies = () => {
   const [movieData, setMovieData] = useState({
@@ -14,6 +15,7 @@ const AddMovies = () => {
     posterUrl: ''
   });
 
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,9 +28,6 @@ const AddMovies = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
-
-
     fetch('http://localhost:5005/movies', {
       method: 'POST',
       headers: {
@@ -39,7 +38,8 @@ const AddMovies = () => {
       .then(response => response.json())
       .then(data => {
         console.log('Película agregada:', data);
-        io
+        
+        // Limpiar los campos del formulario
         setMovieData({
           title: '',
           year: '',
@@ -52,6 +52,9 @@ const AddMovies = () => {
           synopsis: '',
           posterUrl: ''
         });
+        
+        
+        navigate('/');  
       })
       .catch(error => {
         console.error('Error al agregar la película:', error);
@@ -63,7 +66,6 @@ const AddMovies = () => {
       <h2>Agregar Película a Nuovo Cinema Galaxy</h2>
 
       <form onSubmit={handleSubmit}>
-
         <div>
           <label>Título: </label>
           <input
@@ -83,7 +85,7 @@ const AddMovies = () => {
             value={movieData.year}
             onChange={handleChange}
             required
-            style={{ padding: '8px', width: '100px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '100px' }}
           />
         </div>
 
@@ -95,7 +97,7 @@ const AddMovies = () => {
             value={movieData.duration}
             onChange={handleChange}
             required
-            style={{ padding: '8px', width: '100px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '100px' }}
           />
         </div>
 
@@ -107,7 +109,7 @@ const AddMovies = () => {
             value={movieData.director}
             onChange={handleChange}
             required
-            style={{ padding: '8px', width: '150px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '150px' }}
           />
         </div>
 
@@ -119,7 +121,7 @@ const AddMovies = () => {
             value={movieData.screenplay}
             onChange={handleChange}
             required
-            style={{ padding: '8px', width: '150px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '150px' }}
           />
         </div>
 
@@ -131,7 +133,7 @@ const AddMovies = () => {
             value={movieData.cast}
             onChange={handleChange}
             required
-            style={{ padding: '8px', width: '200px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '200px' }}
           />
         </div>
 
@@ -143,7 +145,7 @@ const AddMovies = () => {
             value={movieData.music}
             onChange={handleChange}
             required
-            style={{ padding: '8px', width: '150px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '150px' }}
           />
         </div>
 
@@ -155,7 +157,7 @@ const AddMovies = () => {
             value={movieData.genre}
             onChange={handleChange}
             required
-            style={{ padding: '8px', width: '150px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '150px' }}
           />
         </div>
 
@@ -167,6 +169,7 @@ const AddMovies = () => {
             onChange={handleChange}
             required
             style={{
+              marginTop: '5px',
               padding: '8px',
               width: '250px',
               height: '80px',
