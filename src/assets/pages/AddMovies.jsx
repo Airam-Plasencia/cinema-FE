@@ -39,7 +39,7 @@ const AddMovies = () => {
       .then(data => {
         console.log('Película agregada:', data);
         
-        // Limpiar los campos del formulario
+        
         setMovieData({
           title: '',
           year: '',
@@ -85,7 +85,7 @@ const AddMovies = () => {
             value={movieData.year}
             onChange={handleChange}
             required
-            style={{  padding: '8px', width: '100px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '100px' }}
           />
         </div>
 
@@ -97,7 +97,7 @@ const AddMovies = () => {
             value={movieData.duration}
             onChange={handleChange}
             required
-            style={{  padding: '8px', width: '100px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '100px' }}
           />
         </div>
 
@@ -109,7 +109,7 @@ const AddMovies = () => {
             value={movieData.director}
             onChange={handleChange}
             required
-            style={{  padding: '8px', width: '150px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '150px' }}
           />
         </div>
 
@@ -121,7 +121,7 @@ const AddMovies = () => {
             value={movieData.screenplay}
             onChange={handleChange}
             required
-            style={{  padding: '8px', width: '150px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '150px' }}
           />
         </div>
 
@@ -133,7 +133,7 @@ const AddMovies = () => {
             value={movieData.cast}
             onChange={handleChange}
             required
-            style={{  padding: '8px', width: '200px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '200px' }}
           />
         </div>
 
@@ -145,7 +145,7 @@ const AddMovies = () => {
             value={movieData.music}
             onChange={handleChange}
             required
-            style={{  padding: '8px', width: '150px' }}
+            style={{ marginTop: '5px', padding: '8px', width: '150px' }}
           />
         </div>
 
@@ -169,7 +169,7 @@ const AddMovies = () => {
             onChange={handleChange}
             required
             style={{
-              
+              marginTop: '10px',
               padding: '8px',
               width: '250px',
               height: '80px',
@@ -199,6 +199,7 @@ const AddMovies = () => {
         <button
           type="submit"
           style={{ 
+            marginTop: '15px',
             backgroundColor: '#710866',
             color: 'white',
             padding: '10px 20px',
