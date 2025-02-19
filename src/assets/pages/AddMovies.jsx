@@ -28,7 +28,7 @@ const AddMovies = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:5005/movies', {
+    fetch(`${import.meta.env.VITE_BACK_URL}/movies`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const AddMovies = () => {
           posterUrl: ''
         });
         
-        
+        fetchMovies();
         navigate('/');  
       })
       .catch(error => {
