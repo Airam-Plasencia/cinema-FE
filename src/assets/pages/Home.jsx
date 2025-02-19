@@ -47,14 +47,14 @@ const Home = () => {
                                 <p>{movie.year}</p>
                             </Link>
                             <img 
-                                src="./public/img/edit.png" 
+                                src="/public/img/edit.png" 
                                 alt="Editar" 
                                 className="edit-icon" 
                                 onClick={() => handleEdit(movie.id)} 
                                 style={{ cursor: 'pointer', width: '30px', height: '30px', marginLeft: '20px' }} 
                             />
                             <img 
-                                src="./public/img/cut.png" 
+                                src="/public/img/cut.png" 
                                 alt="Eliminar" 
                                 className="delete-icon" 
                                 onClick={() => handleDelete(movie.id)} 

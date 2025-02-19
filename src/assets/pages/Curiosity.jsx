@@ -18,7 +18,7 @@ const Curiosity = () => {
       </div> 
       <div className="video-container">
         <video width="60%" controls>
-          <source src="./src/assets/videos/cine-galaxy.mp4" type="video/mp4" />
+          <source src="/public/video/cine-galaxy.mp4" type="video/mp4" />
           Tu navegador no soporta el formato de video.
         </video>
       </div>
