@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
-
-    // Obtener las películas del backend
+    const navigate = useNavigate();
+    
     const fetchMovies = () => {
         axios.get(`${import.meta.env.VITE_BACK_URL}/movies`)
             .then((response) => {
@@ -27,6 +27,10 @@ const Home = () => {
             });
     };
 
+    const handleEdit = (id) => {
+        navigate(`/edit/${id}`);
+    };
+
     useEffect(() => {
         fetchMovies();
     }, []); 
@@ -42,7 +46,13 @@ const Home = () => {
                                 <h2>{movie.title}</h2>
                                 <p>{movie.year}</p>
                             </Link>
-                            
+                            <img 
+                                src="./src/assets/img/edit.png" 
+                                alt="Editar" 
+                                className="edit-icon" 
+                                onClick={() => handleEdit(movie.id)} 
+                                style={{ cursor: 'pointer', width: '30px', height: '30px', marginLeft: '20px' }} 
+                            />
                             <img 
                                 src="./src/assets/img/cut.png" 
                                 alt="Eliminar" 

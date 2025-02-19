@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from "./assets/components/Navbar/Navbar";
 import Footer from "./assets/components/Footer/Footer";
+import EditMovie from "./assets/components/EditMovie/EditMovie";
 import { Routes, Route } from 'react-router-dom';
 
 import Home from './assets/pages/Home';
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<MovieDetail />} />
         <Route path="/about" element={<About />} />
+        <Route path="/edit/:id" element={<EditMovie />} />
         <Route path="/movies" element={<AddMovies />} />
         <Route path="/contact" element={<Curiosity />} />
       </Routes>
