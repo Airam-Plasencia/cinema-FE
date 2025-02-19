@@ -43,7 +43,13 @@ const Home = () => {
                                 <p>{movie.year}</p>
                             </Link>
                             
-                            <button onClick={() => handleDelete(movie.id)}>Eliminar</button>
+                            <img 
+                                src="./src/assets/img/cut.png" 
+                                alt="Eliminar" 
+                                className="delete-icon" 
+                                onClick={() => handleDelete(movie.id)} 
+                                style={{ cursor: 'pointer', width: '30px', height: '30px' }} 
+                            />
                         </div>
                     ))}
                 </div>
