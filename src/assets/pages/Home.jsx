@@ -54,7 +54,7 @@ const Home = () => {
                                 style={{ cursor: 'pointer', width: '30px', height: '30px', marginLeft: '20px' }} 
                             />
                             <img 
-                                src="/img/cut.png" 
+                                src="/img/delete.png" 
                                 alt="Eliminar" 
                                 className="delete-icon" 
                                 onClick={() => handleDelete(movie.id)} 
